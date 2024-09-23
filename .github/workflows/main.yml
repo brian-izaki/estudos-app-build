@@ -1,0 +1,15 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  display-variables:
+    name: teste
+    runs-on: ubuntu-latest
+    steps:
+    - name: Use variables
+      run: |
+        echo "TESTE -- $HELLO_WORLD"
+        echo "TESTE 2 -- ENV"
+      env:
+        HELLO_WORLD: ${{ vars.HELLO_WORLD }}
+        ENV_VAR: ${{ vars.ENV }}
