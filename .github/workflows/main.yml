@@ -5,6 +5,8 @@ jobs:
   display-variables:
     name: teste
     runs-on: ubuntu-latest
+    environment:
+      name: development
     steps:
     - name: Use variables
       run: |
@@ -14,6 +16,7 @@ jobs:
         TESTE1: ${{ vars.HELLO_WORLD }}
         TESTE2: ${{ vars.TESTE_ENV }}
     - name: Use variables
-      run: 
+      run: |
         echo "TESTE 3 -- ${{ env.HELLO_WORLD }}"
         echo "TESTE 4 -- ${{ env.TESTE_ENV }}"
+    
