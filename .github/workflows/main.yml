@@ -8,5 +8,8 @@ jobs:
     steps:
     - name: Use variables
       run: |
-        echo 'Hi ${{ vars.HELLO_WORLD }}'
-        echo "TESTE 2 -- ${{ vars.TESTE_ENV }}"
+        echo 'Hi $TESTE1'
+        echo "TESTE 2 -- $TESTE2"
+      env: 
+        TESTE1: ${{ vars.HELLO_WORLD }}
+        TESTE2: ${{ vars.TESTE_ENV }}
