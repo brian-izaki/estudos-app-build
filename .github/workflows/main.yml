@@ -15,8 +15,3 @@ jobs:
       env: 
         TESTE1: ${{ vars.HELLO_WORLD }}
         TESTE2: ${{ vars.TESTE_ENV }}
-    - name: Use variables
-      run: |
-        echo "TESTE 3 -- ${{ env.HELLO_WORLD }}"
-        echo "TESTE 4 -- ${{ env.TESTE_ENV }}"
-    
