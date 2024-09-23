@@ -2,13 +2,30 @@ on:
   workflow_dispatch:
 
 jobs:
-  display-variables:
-    name: teste
+  run-main:
+    name: main
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: main
+    steps:
+    - name: use env for main
+      run: |
+        echo "teste 1 -- $TESTE1"
+        echo "TESTE 2 -- $TESTE2"
+      env: 
+        TESTE1: ${{ vars.HELLO_WORLD }}
+        TESTE2: ${{ vars.TESTE_ENV }}
+
+  run-dev:
+    name: dev
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/development'
     environment:
       name: development
     steps:
-    - name: Use variables
+    - name: use env for development
+      if: github.ref == 'refs/heads/development'
       run: |
         echo "teste 1 -- $TESTE1"
         echo "TESTE 2 -- $TESTE2"
