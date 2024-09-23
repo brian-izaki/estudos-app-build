@@ -10,8 +10,10 @@ jobs:
       run: |
         echo 'teste 1 -- $TESTE1'
         echo "TESTE 2 -- $TESTE2"
-        echo "TESTE 3 -- ${{ env.HELLO_WORLD }}"
-        echo "TESTE 4 -- ${{ env.TESTE_ENV }}"
       env: 
         TESTE1: ${{ vars.HELLO_WORLD }}
         TESTE2: ${{ vars.TESTE_ENV }}
+    - name: Use variables
+      run: 
+        echo "TESTE 3 -- ${{ env.HELLO_WORLD }}"
+        echo "TESTE 4 -- ${{ env.TESTE_ENV }}"
