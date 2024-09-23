@@ -10,7 +10,7 @@ jobs:
     steps:
     - name: Use variables
       run: |
-        echo 'teste 1 -- $TESTE1'
+        echo "teste 1 -- $TESTE1"
         echo "TESTE 2 -- $TESTE2"
       env: 
         TESTE1: ${{ vars.HELLO_WORLD }}
